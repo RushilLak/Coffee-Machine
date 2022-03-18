@@ -3,6 +3,7 @@
 namespace GetWith\CoffeeMachine\Tests\Unit\Console;
 
 use GetWith\CoffeeMachine\Application\OrderDrinkService;
+use GetWith\CoffeeMachine\Infrastructure\CoffeeRepositoryImpl;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 abstract class TestAbstractController extends WebTestCase
@@ -11,6 +12,6 @@ abstract class TestAbstractController extends WebTestCase
 
     public function setUp(): void
     {
-        $this->orderDrinkService = new OrderDrinkService();
+        $this->orderDrinkService = new OrderDrinkService(new CoffeeRepositoryImpl());
     }
 }

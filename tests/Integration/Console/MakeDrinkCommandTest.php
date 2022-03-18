@@ -3,6 +3,8 @@
 namespace GetWith\CoffeeMachine\Tests\Integration\Console;
 
 use GetWith\CoffeeMachine\Application\OrderDrinkService;
+use GetWith\CoffeeMachine\Domain\Repository\CoffeeRepository;
+use GetWith\CoffeeMachine\Infrastructure\CoffeeRepositoryImpl;
 use GetWith\CoffeeMachine\Tests\Integration\IntegrationTestCase;
 use GetWith\CoffeeMachine\UI\Command\MakeDrinkCommand;
 use Symfony\Component\Console\Tester\CommandTester;
@@ -13,7 +15,7 @@ class MakeDrinkCommandTest extends IntegrationTestCase
     {
         parent::setUp();
 
-        $this->application->add(new MakeDrinkCommand(new OrderDrinkService()));
+        $this->application->add(new MakeDrinkCommand(new OrderDrinkService(new CoffeeRepositoryImpl())));
     }
 
     /**
