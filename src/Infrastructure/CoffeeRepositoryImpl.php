@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace GetWith\CoffeeMachine\Infrastructure;
 
 use GetWith\CoffeeMachine\Domain\Drink;
-use GetWith\CoffeeMachine\Domain\Repository\CoffeeOrderRepository;
+use GetWith\CoffeeMachine\Domain\Repository\CoffeeRepository;
 
-class CoffeeOrderRepositoryImpl implements CoffeeOrderRepository
+class CoffeeRepositoryImpl implements CoffeeRepository
 {
     public function order(Drink $drink, float $money, int $sugars = 0, mixed $extraHot = null): string
     {

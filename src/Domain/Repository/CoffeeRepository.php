@@ -6,7 +6,7 @@ namespace GetWith\CoffeeMachine\Domain\Repository;
 
 use GetWith\CoffeeMachine\Domain\Drink;
 
-interface CoffeeOrderRepository
+interface CoffeeRepository
 {
     public function order(Drink $drink, float $money, int $sugars = 0, mixed $extraHot = null): string;
 }

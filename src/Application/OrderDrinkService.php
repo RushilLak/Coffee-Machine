@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace GetWith\CoffeeMachine\Application;
 
 use GetWith\CoffeeMachine\Domain\Drink;
-use GetWith\CoffeeMachine\Domain\Repository\CoffeeOrderRepository;
+use GetWith\CoffeeMachine\Domain\Repository\CoffeeRepository;
 
 final class OrderDrinkService
 {
-    private CoffeeOrderRepository $coffeeOrderRepository;
+    private CoffeeRepository $coffeeOrderRepository;
 
-    public function __construct(CoffeeOrderRepository $coffeeOrderRepository)
+    public function __construct(CoffeeRepository $coffeeOrderRepository)
     {
         $this->coffeeOrderRepository = $coffeeOrderRepository;
     }
